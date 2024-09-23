@@ -8,6 +8,17 @@ function getUser(req,res){
   }
 }
 
+function particulerUser(req,res){
+  try{
+    let id = parseInt(users.params.id);
+    let user = users.find((user)=>user.id===id);
+    res.json(user);
+  }catch(err){
+    console.log(err);
+  }
+}
+
 module.exports={
-  getUser
+  getUser,
+  particulerUser
 }
