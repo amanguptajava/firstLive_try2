@@ -10,7 +10,7 @@ function getUser(req,res){
 
 function particulerUser(req,res){
   try{
-    let id = parseInt(users.params.id);
+    let id = parseInt(req.params.id);
     let user = users.find((user)=>user.id===id);
     res.json(user);
   }catch(err){
